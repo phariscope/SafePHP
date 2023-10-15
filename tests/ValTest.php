@@ -3,7 +3,7 @@
 namespace Phariscope\Tests;
 
 use PHPUnit\Framework\TestCase;
-use SafePHP\Exceptions\NotAcceptableTypeValue;
+use SafePHP\Exceptions\TypeValueException;
 
 use function SafePHP\boolval;
 use function SafePHP\floatval;
@@ -25,7 +25,7 @@ class ValTest extends TestCase
 
     public function testTypeNotAcceptedForStrval(): void
     {
-        $this->expectException(NotAcceptableTypeValue::class);
+        $this->expectException(TypeValueException::class);
         $this->expectExceptionMessage("Cannot convert type value to string");
         strval(new \stdClass());
     }
@@ -46,7 +46,7 @@ class ValTest extends TestCase
 
     public function testTypeNotAcceptedForIntval(): void
     {
-        $this->expectException(NotAcceptableTypeValue::class);
+        $this->expectException(TypeValueException::class);
         $this->expectExceptionMessage("Cannot convert type value to int");
         intval(new \stdClass());
     }
@@ -67,7 +67,7 @@ class ValTest extends TestCase
 
     public function testTypeNotAcceptedForFloatval(): void
     {
-        $this->expectException(NotAcceptableTypeValue::class);
+        $this->expectException(TypeValueException::class);
         $this->expectExceptionMessage("Cannot convert type value to float");
         floatval(new \stdClass());
     }
@@ -89,7 +89,7 @@ class ValTest extends TestCase
 
     public function testTypeNotAcceptedForBoolval(): void
     {
-        $this->expectException(NotAcceptableTypeValue::class);
+        $this->expectException(TypeValueException::class);
         $this->expectExceptionMessage("Cannot convert type value to bool");
         boolval(new \stdClass());
     }

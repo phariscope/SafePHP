@@ -2,7 +2,7 @@
 
 namespace SafePHP;
 
-use SafePHP\Exceptions\NotAcceptableTypeValue;
+use SafePHP\Exceptions\TypeValueException;
 
 /**
  * Get the string value of a variable. See the documentation on string for more information on converting to string.
@@ -16,7 +16,7 @@ use SafePHP\Exceptions\NotAcceptableTypeValue;
  * You cannot use strval() on arrays or on objects that do not implement the __toString() method.
  *
  * @return string The string value of value.
- * @throws NotAcceptableTypeValue
+ * @throws TypeValueException
  */
 function strval(mixed $value): string
 {
@@ -30,14 +30,14 @@ function strval(mixed $value): string
     ) {
         return \strval($value);
     }
-    throw new NotAcceptableTypeValue("Cannot convert type value to string");
+    throw new TypeValueException("Cannot convert type value to string");
 }
 
 /**
  * Get the integer value of a variable.
  * @param mixed $value
  * @return int
- * @throws NotAcceptableTypeValue
+ * @throws TypeValueException
  */
 function intval(mixed $value): int
 {
@@ -51,14 +51,14 @@ function intval(mixed $value): int
     ) {
         return \intval($value);
     }
-    throw new NotAcceptableTypeValue("Cannot convert type value to int");
+    throw new TypeValueException("Cannot convert type value to int");
 }
 
 /**
  *
  * @param mixed $value
  * @return float
- * @throws NotAcceptableTypeValue
+ * @throws TypeValueException
  */
 function floatval(mixed $value): float
 {
@@ -72,9 +72,15 @@ function floatval(mixed $value): float
     ) {
         return \floatval($value);
     }
-    throw new NotAcceptableTypeValue("Cannot convert type value to float");
+    throw new TypeValueException("Cannot convert type value to float");
 }
 
+/**
+ *
+ * @param mixed $value
+ * @return bool
+ * @throws TypeValueException
+ */
 function boolval(mixed $value): bool
 {
     if (
@@ -87,5 +93,5 @@ function boolval(mixed $value): bool
     ) {
         return \boolval($value);
     }
-    throw new NotAcceptableTypeValue("Cannot convert type value to bool");
+    throw new TypeValueException("Cannot convert type value to bool");
 }
