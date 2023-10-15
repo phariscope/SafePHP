@@ -19,10 +19,14 @@ use function SafePHP\floatval;
 use function SafePHP\intval;
 use function SafePHP\strval;
 
+use function SafePHP\hash_file;
+
 $value = boolval(1); // return true
 $value = floatval("123.456"); // return 123.456
 $value = intval("123"); // return 123
 $value = strval(1); // return "1"
+
+$value = hash_file("md2", $filename); // return a string like "080bf15137e26254e9cd8870b68aec86"
 ```
 
 # To Contribute to phariscope/SafePHP

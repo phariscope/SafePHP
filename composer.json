@@ -30,6 +30,7 @@
             "src/Exceptions/"
         ],
         "files": [
+            "src/hash.php",
             "src/val.php"
         ]
     },
