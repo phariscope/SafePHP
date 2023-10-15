@@ -1,3 +1,10 @@
+Phariscope Safe PHP
+========
+
+A set of core PHP functions rewritten to throw exceptions instead of returning `false` when an error is encountered.
+
+These functions complement those of the excellent SafePHP tool https://github.com/thecodingmachine/safe.
+
 # Installation
 
 ```console
@@ -7,12 +14,15 @@ composer require phariscope/SafePHP
 # Usage
 
 ```php
-use function SafePHP\strVal;
-use function SafePHP\strInt;
+use function SafePHP\boolval;
+use function SafePHP\floatval;
+use function SafePHP\intval;
+use function SafePHP\strval;
 
-$value = strVal(1);
-$value = strInt("123");
-
+$value = boolval(1); // return true
+$value = floatval("123.456"); // return 123.456
+$value = intval("123"); // return 123
+$value = strval(1); // return "1"
 ```
 
 # To Contribute to phariscope/SafePHP
