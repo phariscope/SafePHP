@@ -8,7 +8,7 @@ These functions complement those of the excellent SafePHP tool https://github.co
 # Installation
 
 ```console
-composer require phariscope/SafePHP
+composer require phariscope/safephp
 ```
 
 # Usage
