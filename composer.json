@@ -31,7 +31,8 @@
         ],
         "files": [
             "src/hash.php",
-            "src/val.php"
+            "src/val.php",
+            "src/getenv.php"
         ]
     },
     "autoload-dev": {

@@ -21,12 +21,20 @@ use function SafePHP\strval;
 
 use function SafePHP\hash_file;
 
+use function SafePHP\getenv;
+use function SafePHP\getenvOrWithENV;
+
 $value = boolval(1); // return true
 $value = floatval("123.456"); // return 123.456
 $value = intval("123"); // return 123
 $value = strval(1); // return "1"
 
 $value = hash_file("md2", $filename); // return a string like "080bf15137e26254e9cd8870b68aec86"
+
+$value = getenv('PWD'); // return string of current PWD
+$value = getenv(); // return array of all getenv (be carreful some $_ENV may hav been forgotten) 
+
+$value = getenvOrWithENV('PWD'); // return string of current PWD even if it is in $_ENV only
 ```
 
 # To Contribute to phariscope/SafePHP
