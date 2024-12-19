@@ -17,7 +17,9 @@ class GetenvTest extends TestCase
     {
         $this->initialEnv = \getenv('MY_ENV') === false ? null : \getenv('MY_ENV');
         if ($this->initialEnv === null) {
-            $this->initialEnv = isset($_ENV['MY_ENV']) ? $_ENV['MY_ENV'] : null;
+            $initial = isset($_ENV['MY_ENV']) ? $_ENV['MY_ENV'] : null;
+            $this->assertTrue($initial === null || is_string($initial) || is_array($initial));
+            $this->initialEnv = $initial;
         }
         putenv('MY_ENV');
     }

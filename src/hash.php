@@ -28,7 +28,7 @@ function hash_file(string $algo, string $filename, bool $binary = false, array $
     if (!file_exists($filename)) {
         $safeResult = false;
     } else {
-        $safeResult = \hash_file($algo, $filename, $binary, $options);
+        $safeResult = \hash_file($algo, $filename, $binary);
     }
     if (false === $safeResult) {
         $message = sprintf("hash_file(%s, %s, %s): ", $algo, $filename, $binary ? "true" : "false");

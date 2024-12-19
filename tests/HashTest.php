@@ -11,8 +11,9 @@ class HashTest extends TestCase
 {
     public function testHashFile(): void
     {
-        $filename = __DIR__ . "/../src/hash.php";
-        $this->assertIsString(hash_file("md2", $filename));
+        $filename = __DIR__ . "/resources/welcomeToBeHashed.txt";
+        $hash = hash_file("md2", $filename);
+        $this->assertEquals("1cb1526acff00c70d2a3707d1d22d565", $hash);
     }
 
     public function testBadFilename(): void

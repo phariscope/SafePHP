@@ -1,3 +1,3 @@
-FROM composer:2.5.5
+FROM composer:2.6.6
 
 WORKDIR /usr/src
