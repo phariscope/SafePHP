@@ -18,7 +18,7 @@ use SafePHP\Exceptions\TypeValueException;
  * @return string The string value of value.
  * @throws TypeValueException
  */
-function strval(mixed $value): string
+function strval($value): string
 {
     if (
         is_bool($value) ||
@@ -39,7 +39,7 @@ function strval(mixed $value): string
  * @return int
  * @throws TypeValueException
  */
-function intval(mixed $value): int
+function intval($value): int
 {
     if (
         is_bool($value) ||
@@ -60,7 +60,7 @@ function intval(mixed $value): int
  * @return float
  * @throws TypeValueException
  */
-function floatval(mixed $value): float
+function floatval($value): float
 {
     if (
         is_bool($value) ||
@@ -81,7 +81,7 @@ function floatval(mixed $value): float
  * @return bool
  * @throws TypeValueException
  */
-function boolval(mixed $value): bool
+function boolval($value): bool
 {
     if (
         is_bool($value) ||
