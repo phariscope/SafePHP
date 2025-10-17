@@ -19,7 +19,7 @@ use SafePHP\Exceptions\UndefinedEnvException;
   *      variable name does not exist. If name is null, all environment variables are returned as an associative array.
   * @throws UndefinedEnvException
   */
-function getenv(?string $name = null, bool $local_only = false): array|string // @phpstan-ignore-line because of never
+function getenv(?string $name = null, bool $local_only = false) // @phpstan-ignore-line because of never
 {
 //returns array<mixed> so it can be removed from the return type.
 
