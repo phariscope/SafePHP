@@ -11,7 +11,7 @@ use function SafePHP\getenvOrWithENV;
 class GetenvTest extends TestCase
 {
     /** @var null|string|array<mixed> */
-    private $initialEnv;
+    private null|string|array $initialEnv;
 
     public function setUp(): void
     {
